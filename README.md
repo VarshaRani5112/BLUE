@@ -24,3 +24,5 @@ the report conversion to html will take a few more steps
 
 NOTE: USED BDD framework with cypress to automate the code
 Added useful comments for the team for better understanding.
+
+Command to open test runner: npx cypress open
