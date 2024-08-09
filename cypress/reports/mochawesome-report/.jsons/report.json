@@ -1,0 +1,688 @@
+{
+  "stats": {
+    "suites": 6,
+    "tests": 23,
+    "passes": 7,
+    "pending": 0,
+    "failures": 16,
+    "start": "2024-08-09T13:15:42.353Z",
+    "end": "2024-08-09T13:18:29.907Z",
+    "duration": 167554,
+    "testsRegistered": 23,
+    "passPercent": 30.434782608695656,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2df65af8-6001-41a0-ae20-ddcb56552e58",
+      "title": "",
+      "fullFile": "cypress\\e2e\\blue.cy.js",
+      "file": "cypress\\e2e\\blue.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "67327b5f-13bc-441c-a6b0-2e06f81511d7",
+          "title": "Given : User lands on the Blue bit Raffel page by clicking the Link",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Then: The User experience should be as per acceptance creteria",
+              "fullTitle": "Given : User lands on the Blue bit Raffel page by clicking the Link Then: The User experience should be as per acceptance creteria",
+              "timedOut": null,
+              "duration": 12177,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\blue.cy.js\\\\Given  User lands on the Blue bit Raffel page by clicking the Link -- Then The User experience should be as per acceptance creteria (failed).png\"\n    ]\n  ]\n}",
+              "code": "// Wait time for the page to load on the browser screen\ncy.wait(2000);\n// Assertion  that the current URL is as expected\ncy.url().should('eq', 'https://blue-bite-dev-3.bluebite.io/04425f7c-4fdd-47f6-85b3-b800d12bb9ca');\n//------------------------------------Assertions to validate the images present on sceen\n// Assertion to check the presence of accepted page on the application\ncy.get('img[src=\"https://assets-global.website-files.com/5aa16619a722600001c19c3f/5ad4d8b3d3f2b047b6e10cde_cs-hero-adiparley2017.jpg\"]').should('be.visible');\n// Assertion to check the extension of the images present\ncy.get('img').should('have.attr', 'src').and('match', /.*\\.jpg$/);\n// Assertion for image at bottom\ncy.get('img[src=\"https://assets-global.website-files.com/5aa16619a722600001c19c3f/5f2b26cac5ffe2ecb2c1d803_blue-bite-Adidas%20Parley-2017-01.jpg\"]').should('be.visible');\n// Assertion to check the extension of the images present\ncy.get('img').should('have.attr', 'src').and('match', /.*\\.jpg$/);\n//-------------------------------Assetion for title of the page and the component\n// Assertion  the page title colour of the text and size of the text\ncy.wait(300);\ncy.get('.snippet__Body-sc-12bo3rm-0').should('contain.text', 'Enter chance to win!');\ncy.get('.snippet__Body-sc-12bo3rm-0').should('be.visible').and('have.css', 'color', 'rgb(0, 0, 0)').and('have.css', 'font-size', '20px');\n// Assertion to check the name field \ncy.get('.form__FormWrapper-sc-vgm4n7-0').find('.shared__FormLabel-sc-19918pz-0').eq(0).should('be.visible').should('contain.text', 'Name*').and('have.css', 'color', 'rgb(107, 107, 107)').and('have.css', 'font-size', '14px');\n// Assertion of input field present for \"name\"\ncy.get('input[name=\"name\"]').should('exist').should('have.css', 'border-color', 'rgb(221, 221, 221)').and('have.css', 'font-size', '14px');\n// Assertion to check the email id field\ncy.get('.form__FormWrapper-sc-vgm4n7-0').find('.shared__FormLabel-sc-19918pz-0').eq(1).should('be.visible').should('contain.text', 'Email*').and('have.css', 'color', 'rgb(107, 107, 107)').and('have.css', 'font-size', '14px');\n// Assertion of input field present for \"email\"\ncy.get('input[name=\"email\"]').should('exist').should('have.css', 'border-color', 'rgb(221, 221, 221)').and('have.css', 'font-size', '14px');\n// Assertion to check the age field \ncy.get('.form__FormWrapper-sc-vgm4n7-0').find('.shared__FormLabel-sc-19918pz-0').eq(2).should('be.visible').should('contain.text', 'Age*').and('have.css', 'color', 'rgb(107, 107, 107)').and('have.css', 'font-size', '14px');\n// Assertion of input field present for \"age\"\ncy.get('input[name=\"age\"]').should('exist').should('have.css', 'border-color', 'rgb(221, 221, 221)').and('have.css', 'font-size', '14px');\n// Assertion to check Reason field\ncy.get('.form__FormWrapper-sc-vgm4n7-0').find('.shared__FormLabel-sc-19918pz-0').eq(3).should('be.visible').should('contain.text', 'Reason').and('have.css', 'color', 'rgb(107, 107, 107)').and('have.css', 'font-size', '14px');\n// Assertion of input field present for \"Reason\"\ncy.get('input[name=\"reason\"]').should('exist').should('have.css', 'border-color', 'rgb(221, 221, 221)').and('have.css', 'font-size', '14px');\n// Assertion to check the submit button\ncy.get('.form__FormWrapper-sc-vgm4n7-0').find('button[type=\"button\"]').should('be.visible').and('contain.text', \"Submit\").and('have.css', 'color', 'rgb(255, 255, 255)').and('have.css', 'font-size', '14px') // Replace with the expected font size\n.and('have.css', 'position', 'relative');\n// validating if field is getting highlighted if focused\n// This block will fail because it is not as per acceptance\ncy.get('input[name=\"name\"]').focus().should('have.css', 'border-color', 'rgb(0, 0, 255)');\ncy.get('input[name=\"email\"]').focus().should('have.css', 'border-color', 'rgb(0, 0, 255)');\ncy.get('input[name=\"age\"]').focus().should('have.css', 'border-color', 'rgb(0, 0, 255)');\ncy.get('input[name=\"reason\"]').focus().should('have.css', 'border-color', 'rgb(0, 0, 255)');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<input#input-3.input__FormInput-sc-1ytoz48-0.fnIVoH>' to have CSS property 'border-color' with the value 'rgb(0, 0, 255)', but the value was 'rgb(221, 221, 221)'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<input#input-3.input__FormInput-sc-1ytoz48-0.fnIVoH>' to have CSS property 'border-color' with the value 'rgb(0, 0, 255)', but the value was 'rgb(221, 221, 221)'\n    at Context.eval (webpack://blue-assessment/./cypress/e2e/blue.cy.js:101:13)",
+                "diff": "- 'rgb(221, 221, 221)'\n+ 'rgb(0, 0, 255)'\n"
+              },
+              "uuid": "0c76beb5-6a34-4666-8588-3ecaeed3258d",
+              "parentUUID": "67327b5f-13bc-441c-a6b0-2e06f81511d7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "0c76beb5-6a34-4666-8588-3ecaeed3258d"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 12177,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "44cdfb37-bded-4b8d-9347-ac999459a269",
+          "title": "Given : If User dont fill any details in the input field and click on submit button",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Then: Should turn the name field border red on validation failure",
+              "fullTitle": "Given : If User dont fill any details in the input field and click on submit button Then: Should turn the name field border red on validation failure",
+              "timedOut": null,
+              "duration": 6914,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\blue.cy.js\\\\Given  If User dont fill any details in the input field and click on submit button -- Then Should turn the name field border red on validation failure (failed).png\"\n    ]\n  ]\n}",
+              "code": "cy.get('.form__FormWrapper-sc-vgm4n7-0').find('button[type=\"button\"]').click();\ncy.get('input[name=\"name\"]').should('have.css', 'border-color', 'rgb(255, 0, 0)');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<input#input-3.input__FormInput-sc-1ytoz48-0.fnIVoH>' to have CSS property 'border-color' with the value 'rgb(255, 0, 0)', but the value was 'rgb(221, 221, 221)'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<input#input-3.input__FormInput-sc-1ytoz48-0.fnIVoH>' to have CSS property 'border-color' with the value 'rgb(255, 0, 0)', but the value was 'rgb(221, 221, 221)'\n    at Context.eval (webpack://blue-assessment/./cypress/e2e/blue.cy.js:123:13)",
+                "diff": "- 'rgb(221, 221, 221)'\n+ 'rgb(255, 0, 0)'\n"
+              },
+              "uuid": "9991e7f2-52cd-4121-8c19-fb01d6c3d983",
+              "parentUUID": "44cdfb37-bded-4b8d-9347-ac999459a269",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Then: Should turn the email field border red on validation failure",
+              "fullTitle": "Given : If User dont fill any details in the input field and click on submit button Then: Should turn the email field border red on validation failure",
+              "timedOut": null,
+              "duration": 5028,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\blue.cy.js\\\\Given  If User dont fill any details in the input field and click on submit button -- Then Should turn the email field border red on validation failure (failed).png\"\n    ]\n  ]\n}",
+              "code": "cy.get('.form__FormWrapper-sc-vgm4n7-0').find('button[type=\"button\"]').click();\ncy.get('input[name=\"email\"]').should('have.css', 'border-color', 'rgb(255, 0, 0)');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<input#input-4.input__FormInput-sc-1ytoz48-0.fnIVoH>' to have CSS property 'border-color' with the value 'rgb(255, 0, 0)', but the value was 'rgb(221, 221, 221)'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<input#input-4.input__FormInput-sc-1ytoz48-0.fnIVoH>' to have CSS property 'border-color' with the value 'rgb(255, 0, 0)', but the value was 'rgb(221, 221, 221)'\n    at Context.eval (webpack://blue-assessment/./cypress/e2e/blue.cy.js:130:13)",
+                "diff": "- 'rgb(221, 221, 221)'\n+ 'rgb(255, 0, 0)'\n"
+              },
+              "uuid": "fc1eb99c-a6ac-477f-a281-6dd145085778",
+              "parentUUID": "44cdfb37-bded-4b8d-9347-ac999459a269",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Then: Should turn the age field border red on validation failure",
+              "fullTitle": "Given : If User dont fill any details in the input field and click on submit button Then: Should turn the age field border red on validation failure",
+              "timedOut": null,
+              "duration": 6160,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\blue.cy.js\\\\Given  If User dont fill any details in the input field and click on submit button -- Then Should turn the age field border red on validation failure (failed).png\"\n    ]\n  ]\n}",
+              "code": "cy.get('.form__FormWrapper-sc-vgm4n7-0').find('button[type=\"button\"]').click();\ncy.get('input[name=\"age\"]').should('have.css', 'border-color', 'rgb(255, 0, 0)');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<input#input-8.input__FormInput-sc-1ytoz48-0.fnIVoH>' to have CSS property 'border-color' with the value 'rgb(255, 0, 0)', but the value was 'rgb(221, 221, 221)'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<input#input-8.input__FormInput-sc-1ytoz48-0.fnIVoH>' to have CSS property 'border-color' with the value 'rgb(255, 0, 0)', but the value was 'rgb(221, 221, 221)'\n    at Context.eval (webpack://blue-assessment/./cypress/e2e/blue.cy.js:137:13)",
+                "diff": "- 'rgb(221, 221, 221)'\n+ 'rgb(255, 0, 0)'\n"
+              },
+              "uuid": "e13b95c1-48b8-4ddd-80e2-7a18de95b72e",
+              "parentUUID": "44cdfb37-bded-4b8d-9347-ac999459a269",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Then: Should turn the reason field border red on validation failure",
+              "fullTitle": "Given : If User dont fill any details in the input field and click on submit button Then: Should turn the reason field border red on validation failure",
+              "timedOut": null,
+              "duration": 5611,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\blue.cy.js\\\\Given  If User dont fill any details in the input field and click on submit button -- Then Should turn the reason field border red on validation failure (failed).png\"\n    ]\n  ]\n}",
+              "code": "cy.get('.form__FormWrapper-sc-vgm4n7-0').find('button[type=\"button\"]').click();\ncy.get('input[name=\"reason\"]').should('have.css', 'border-color', 'rgb(255, 0, 0)');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<input#input-9.input__FormInput-sc-1ytoz48-0.fnIVoH>' to have CSS property 'border-color' with the value 'rgb(255, 0, 0)', but the value was 'rgb(221, 221, 221)'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<input#input-9.input__FormInput-sc-1ytoz48-0.fnIVoH>' to have CSS property 'border-color' with the value 'rgb(255, 0, 0)', but the value was 'rgb(221, 221, 221)'\n    at Context.eval (webpack://blue-assessment/./cypress/e2e/blue.cy.js:144:13)",
+                "diff": "- 'rgb(221, 221, 221)'\n+ 'rgb(255, 0, 0)'\n"
+              },
+              "uuid": "769dd5a1-41b9-42b2-8268-f7ac85b0f507",
+              "parentUUID": "44cdfb37-bded-4b8d-9347-ac999459a269",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Then: Should display an error message and highlight the name field if \"name\"is invalid",
+              "fullTitle": "Given : If User dont fill any details in the input field and click on submit button Then: Should display an error message and highlight the name field if \"name\"is invalid",
+              "timedOut": null,
+              "duration": 10322,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\blue.cy.js\\\\Given  If User dont fill any details in the input field and click on submit button -- Then Should display an error message and highlight the name field if nameis invalid (failed).png\"\n    ]\n  ]\n}",
+              "code": "// Block will fail as it is a bug\n// Fill out the form fields\n// Define the array of invalid values for the name field\nconst invalidNames = [' ', '12345', '!@#$%'];\ninvalidNames.forEach(invalidName => {\n  cy.get('input[name=\"name\"]').clear().type(invalidName);\n  cy.get('input[name=\"age\"]').type('24');\n  cy.get('input[name=\"email\"]').type('varsha.rani@gmail.com');\n  cy.get('input[name=\"reason\"]').type('I like sneakers');\n  // Click the submit button\n  cy.get('button[type=\"button\"]').click();\n  // Check for the error message\n  cy.get('.error-message').should('be.visible').and('contain.text', 'Name is required');\n  // Check if the name field is highlighted\n  cy.get('input[name=\"name\"]').should('have.css', 'border-color', 'rgb(255, 0, 0)');\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.error-message`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.error-message`, but never found it.\n    at eval (webpack://blue-assessment/./cypress/e2e/blue.cy.js:169:17)\nat Array.forEach (<anonymous>)\n    at Context.eval (webpack://blue-assessment/./cypress/e2e/blue.cy.js:151:21)",
+                "diff": null
+              },
+              "uuid": "73fb8063-68e9-4fc8-b62c-3f1d482e2bac",
+              "parentUUID": "44cdfb37-bded-4b8d-9347-ac999459a269",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "9991e7f2-52cd-4121-8c19-fb01d6c3d983",
+            "fc1eb99c-a6ac-477f-a281-6dd145085778",
+            "e13b95c1-48b8-4ddd-80e2-7a18de95b72e",
+            "769dd5a1-41b9-42b2-8268-f7ac85b0f507",
+            "73fb8063-68e9-4fc8-b62c-3f1d482e2bac"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 34035,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "bf43471f-4af5-40d1-8b93-0cd4d4038dca",
+          "title": "Given: User Enters invalid Email ID",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Then: Backend Should display an error message and highlight the email field if email is \" \"",
+              "fullTitle": "Given: User Enters invalid Email ID Then: Backend Should display an error message and highlight the email field if email is \" \"",
+              "timedOut": null,
+              "duration": 7475,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\blue.cy.js\\\\Given User Enters invalid Email ID -- Then Backend Should display an error message and highlight the email field if email is (failed).png\"\n    ]\n  ]\n}",
+              "code": "cy.get('input[name=\"name\"]').clear().type('Varsha');\ncy.get('input[name=\"age\"]').clear().type('24');\ncy.get('input[name=\"email\"]').clear().type(invalidEmail);\ncy.get('input[name=\"reason\"]').clear().type('I like shopping');\n// Click the submit button\ncy.get('button[type=\"button\"]').click();\n// Check for the error message\ncy.get('.error-message').should('be.visible').and('contain.text', 'Invalid email address');\n// Check if the email field is highlighted\ncy.get('input[name=\"email\"]').should('have.css', 'border-color', 'rgb(255, 0, 0)');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.error-message`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.error-message`, but never found it.\n    at Context.eval (webpack://blue-assessment/./cypress/e2e/blue.cy.js:220:17)",
+                "diff": null
+              },
+              "uuid": "0e5642e1-2852-4e0c-ab79-d72d82ce2f5c",
+              "parentUUID": "bf43471f-4af5-40d1-8b93-0cd4d4038dca",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Then: Backend Should display an error message and highlight the email field if email is \"varsha.com\"",
+              "fullTitle": "Given: User Enters invalid Email ID Then: Backend Should display an error message and highlight the email field if email is \"varsha.com\"",
+              "timedOut": null,
+              "duration": 10422,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\blue.cy.js\\\\Given User Enters invalid Email ID -- Then Backend Should display an error message and highlight the email field if email is varsha.com (failed).png\"\n    ]\n  ]\n}",
+              "code": "cy.get('input[name=\"name\"]').clear().type('Varsha');\ncy.get('input[name=\"age\"]').clear().type('24');\ncy.get('input[name=\"email\"]').clear().type(invalidEmail);\ncy.get('input[name=\"reason\"]').clear().type('I like shopping');\n// Click the submit button\ncy.get('button[type=\"button\"]').click();\n// Check for the error message\ncy.get('.error-message').should('be.visible').and('contain.text', 'Invalid email address');\n// Check if the email field is highlighted\ncy.get('input[name=\"email\"]').should('have.css', 'border-color', 'rgb(255, 0, 0)');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.error-message`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.error-message`, but never found it.\n    at Context.eval (webpack://blue-assessment/./cypress/e2e/blue.cy.js:220:17)",
+                "diff": null
+              },
+              "uuid": "3375c299-c255-4dee-ae61-e640762ba583",
+              "parentUUID": "bf43471f-4af5-40d1-8b93-0cd4d4038dca",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Then: Backend Should display an error message and highlight the email field if email is \"varsha@.com\"",
+              "fullTitle": "Given: User Enters invalid Email ID Then: Backend Should display an error message and highlight the email field if email is \"varsha@.com\"",
+              "timedOut": null,
+              "duration": 7385,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\blue.cy.js\\\\Given User Enters invalid Email ID -- Then Backend Should display an error message and highlight the email field if email is varsha@.com (failed).png\"\n    ]\n  ]\n}",
+              "code": "cy.get('input[name=\"name\"]').clear().type('Varsha');\ncy.get('input[name=\"age\"]').clear().type('24');\ncy.get('input[name=\"email\"]').clear().type(invalidEmail);\ncy.get('input[name=\"reason\"]').clear().type('I like shopping');\n// Click the submit button\ncy.get('button[type=\"button\"]').click();\n// Check for the error message\ncy.get('.error-message').should('be.visible').and('contain.text', 'Invalid email address');\n// Check if the email field is highlighted\ncy.get('input[name=\"email\"]').should('have.css', 'border-color', 'rgb(255, 0, 0)');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.error-message`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.error-message`, but never found it.\n    at Context.eval (webpack://blue-assessment/./cypress/e2e/blue.cy.js:220:17)",
+                "diff": null
+              },
+              "uuid": "23b3cf4a-360d-4508-b2c1-54b1b30de16a",
+              "parentUUID": "bf43471f-4af5-40d1-8b93-0cd4d4038dca",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Then: Backend Should display an error message and highlight the email field if email is \"varsha@@rani.com\"",
+              "fullTitle": "Given: User Enters invalid Email ID Then: Backend Should display an error message and highlight the email field if email is \"varsha@@rani.com\"",
+              "timedOut": null,
+              "duration": 8259,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\blue.cy.js\\\\Given User Enters invalid Email ID -- Then Backend Should display an error message and highlight the email field if email is varsha@@rani.com (failed).png\"\n    ]\n  ]\n}",
+              "code": "cy.get('input[name=\"name\"]').clear().type('Varsha');\ncy.get('input[name=\"age\"]').clear().type('24');\ncy.get('input[name=\"email\"]').clear().type(invalidEmail);\ncy.get('input[name=\"reason\"]').clear().type('I like shopping');\n// Click the submit button\ncy.get('button[type=\"button\"]').click();\n// Check for the error message\ncy.get('.error-message').should('be.visible').and('contain.text', 'Invalid email address');\n// Check if the email field is highlighted\ncy.get('input[name=\"email\"]').should('have.css', 'border-color', 'rgb(255, 0, 0)');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.error-message`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.error-message`, but never found it.\n    at Context.eval (webpack://blue-assessment/./cypress/e2e/blue.cy.js:220:17)",
+                "diff": null
+              },
+              "uuid": "8c2969d3-d1a0-47c4-b29b-c437f5f2d337",
+              "parentUUID": "bf43471f-4af5-40d1-8b93-0cd4d4038dca",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Then: Backend Should display an error message and highlight the email field if email is \"varsha rani@gmail.com\"",
+              "fullTitle": "Given: User Enters invalid Email ID Then: Backend Should display an error message and highlight the email field if email is \"varsha rani@gmail.com\"",
+              "timedOut": null,
+              "duration": 7687,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\blue.cy.js\\\\Given User Enters invalid Email ID -- Then Backend Should display an error message and highlight the email field if email is varsha rani@gmail.com (failed).png\"\n    ]\n  ]\n}",
+              "code": "cy.get('input[name=\"name\"]').clear().type('Varsha');\ncy.get('input[name=\"age\"]').clear().type('24');\ncy.get('input[name=\"email\"]').clear().type(invalidEmail);\ncy.get('input[name=\"reason\"]').clear().type('I like shopping');\n// Click the submit button\ncy.get('button[type=\"button\"]').click();\n// Check for the error message\ncy.get('.error-message').should('be.visible').and('contain.text', 'Invalid email address');\n// Check if the email field is highlighted\ncy.get('input[name=\"email\"]').should('have.css', 'border-color', 'rgb(255, 0, 0)');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.error-message`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.error-message`, but never found it.\n    at Context.eval (webpack://blue-assessment/./cypress/e2e/blue.cy.js:220:17)",
+                "diff": null
+              },
+              "uuid": "61289f2e-d0d4-46cf-ba5b-fb3f12d81f8d",
+              "parentUUID": "bf43471f-4af5-40d1-8b93-0cd4d4038dca",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Then: Backend Should display an error message and highlight the email field if email is \"varsha!rani@gmail.com\"",
+              "fullTitle": "Given: User Enters invalid Email ID Then: Backend Should display an error message and highlight the email field if email is \"varsha!rani@gmail.com\"",
+              "timedOut": null,
+              "duration": 7981,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\blue.cy.js\\\\Given User Enters invalid Email ID -- Then Backend Should display an error message and highlight the email field if email is varsha!rani@gmail.com (failed).png\"\n    ]\n  ]\n}",
+              "code": "cy.get('input[name=\"name\"]').clear().type('Varsha');\ncy.get('input[name=\"age\"]').clear().type('24');\ncy.get('input[name=\"email\"]').clear().type(invalidEmail);\ncy.get('input[name=\"reason\"]').clear().type('I like shopping');\n// Click the submit button\ncy.get('button[type=\"button\"]').click();\n// Check for the error message\ncy.get('.error-message').should('be.visible').and('contain.text', 'Invalid email address');\n// Check if the email field is highlighted\ncy.get('input[name=\"email\"]').should('have.css', 'border-color', 'rgb(255, 0, 0)');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.error-message`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.error-message`, but never found it.\n    at Context.eval (webpack://blue-assessment/./cypress/e2e/blue.cy.js:220:17)",
+                "diff": null
+              },
+              "uuid": "b4748c01-c2d5-441f-b362-0218eb2eaec7",
+              "parentUUID": "bf43471f-4af5-40d1-8b93-0cd4d4038dca",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Then: Backend Should display an error message and highlight the email field if email is \"varsha@gamilcom\"",
+              "fullTitle": "Given: User Enters invalid Email ID Then: Backend Should display an error message and highlight the email field if email is \"varsha@gamilcom\"",
+              "timedOut": null,
+              "duration": 7569,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\blue.cy.js\\\\Given User Enters invalid Email ID -- Then Backend Should display an error message and highlight the email field if email is varsha@gamilcom (failed).png\"\n    ]\n  ]\n}",
+              "code": "cy.get('input[name=\"name\"]').clear().type('Varsha');\ncy.get('input[name=\"age\"]').clear().type('24');\ncy.get('input[name=\"email\"]').clear().type(invalidEmail);\ncy.get('input[name=\"reason\"]').clear().type('I like shopping');\n// Click the submit button\ncy.get('button[type=\"button\"]').click();\n// Check for the error message\ncy.get('.error-message').should('be.visible').and('contain.text', 'Invalid email address');\n// Check if the email field is highlighted\ncy.get('input[name=\"email\"]').should('have.css', 'border-color', 'rgb(255, 0, 0)');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.error-message`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.error-message`, but never found it.\n    at Context.eval (webpack://blue-assessment/./cypress/e2e/blue.cy.js:220:17)",
+                "diff": null
+              },
+              "uuid": "98c440e8-0b9c-423a-a450-e1d45f66b431",
+              "parentUUID": "bf43471f-4af5-40d1-8b93-0cd4d4038dca",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Then: Backend Should display an error message and highlight the email field if email is \"@rani.com\"",
+              "fullTitle": "Given: User Enters invalid Email ID Then: Backend Should display an error message and highlight the email field if email is \"@rani.com\"",
+              "timedOut": null,
+              "duration": 11711,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\blue.cy.js\\\\Given User Enters invalid Email ID -- Then Backend Should display an error message and highlight the email field if email is @rani.com (failed).png\"\n    ]\n  ]\n}",
+              "code": "cy.get('input[name=\"name\"]').clear().type('Varsha');\ncy.get('input[name=\"age\"]').clear().type('24');\ncy.get('input[name=\"email\"]').clear().type(invalidEmail);\ncy.get('input[name=\"reason\"]').clear().type('I like shopping');\n// Click the submit button\ncy.get('button[type=\"button\"]').click();\n// Check for the error message\ncy.get('.error-message').should('be.visible').and('contain.text', 'Invalid email address');\n// Check if the email field is highlighted\ncy.get('input[name=\"email\"]').should('have.css', 'border-color', 'rgb(255, 0, 0)');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.error-message`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.error-message`, but never found it.\n    at Context.eval (webpack://blue-assessment/./cypress/e2e/blue.cy.js:220:17)",
+                "diff": null
+              },
+              "uuid": "6921882f-d18d-4d97-875f-c8a73835ae89",
+              "parentUUID": "bf43471f-4af5-40d1-8b93-0cd4d4038dca",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Then: Backend Should display an error message and highlight the email field if email is \"varsha@.com\"",
+              "fullTitle": "Given: User Enters invalid Email ID Then: Backend Should display an error message and highlight the email field if email is \"varsha@.com\"",
+              "timedOut": null,
+              "duration": 9082,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\blue.cy.js\\\\Given User Enters invalid Email ID -- Then Backend Should display an error message and highlight the email field if email is varsha@.com (failed) (1).png\"\n    ]\n  ]\n}",
+              "code": "cy.get('input[name=\"name\"]').clear().type('Varsha');\ncy.get('input[name=\"age\"]').clear().type('24');\ncy.get('input[name=\"email\"]').clear().type(invalidEmail);\ncy.get('input[name=\"reason\"]').clear().type('I like shopping');\n// Click the submit button\ncy.get('button[type=\"button\"]').click();\n// Check for the error message\ncy.get('.error-message').should('be.visible').and('contain.text', 'Invalid email address');\n// Check if the email field is highlighted\ncy.get('input[name=\"email\"]').should('have.css', 'border-color', 'rgb(255, 0, 0)');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.error-message`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.error-message`, but never found it.\n    at Context.eval (webpack://blue-assessment/./cypress/e2e/blue.cy.js:220:17)",
+                "diff": null
+              },
+              "uuid": "2901df39-4c80-42d5-adb6-eda1457f2ecb",
+              "parentUUID": "bf43471f-4af5-40d1-8b93-0cd4d4038dca",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Then: Backend Should display an error message and highlight the email field if email is \"varsha@rani..com\"",
+              "fullTitle": "Given: User Enters invalid Email ID Then: Backend Should display an error message and highlight the email field if email is \"varsha@rani..com\"",
+              "timedOut": null,
+              "duration": 7871,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\blue.cy.js\\\\Given User Enters invalid Email ID -- Then Backend Should display an error message and highlight the email field if email is varsha@rani..com (failed).png\"\n    ]\n  ]\n}",
+              "code": "cy.get('input[name=\"name\"]').clear().type('Varsha');\ncy.get('input[name=\"age\"]').clear().type('24');\ncy.get('input[name=\"email\"]').clear().type(invalidEmail);\ncy.get('input[name=\"reason\"]').clear().type('I like shopping');\n// Click the submit button\ncy.get('button[type=\"button\"]').click();\n// Check for the error message\ncy.get('.error-message').should('be.visible').and('contain.text', 'Invalid email address');\n// Check if the email field is highlighted\ncy.get('input[name=\"email\"]').should('have.css', 'border-color', 'rgb(255, 0, 0)');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.error-message`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.error-message`, but never found it.\n    at Context.eval (webpack://blue-assessment/./cypress/e2e/blue.cy.js:220:17)",
+                "diff": null
+              },
+              "uuid": "c4554fdd-29f2-47a4-9c98-00378e74cf8a",
+              "parentUUID": "bf43471f-4af5-40d1-8b93-0cd4d4038dca",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "0e5642e1-2852-4e0c-ab79-d72d82ce2f5c",
+            "3375c299-c255-4dee-ae61-e640762ba583",
+            "23b3cf4a-360d-4508-b2c1-54b1b30de16a",
+            "8c2969d3-d1a0-47c4-b29b-c437f5f2d337",
+            "61289f2e-d0d4-46cf-ba5b-fb3f12d81f8d",
+            "b4748c01-c2d5-441f-b362-0218eb2eaec7",
+            "98c440e8-0b9c-423a-a450-e1d45f66b431",
+            "6921882f-d18d-4d97-875f-c8a73835ae89",
+            "2901df39-4c80-42d5-adb6-eda1457f2ecb",
+            "c4554fdd-29f2-47a4-9c98-00378e74cf8a"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 85442,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "6269eee2-c3c8-426f-828a-8e5b28cb754a",
+          "title": "Given: When user enters all the valid entry for the input field and submit",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Then: Raffel should get processed and a success message should come on the screen with count",
+              "fullTitle": "Given: When user enters all the valid entry for the input field and submit Then: Raffel should get processed and a success message should come on the screen with count",
+              "timedOut": null,
+              "duration": 7117,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Fill out the form fields\ncy.get('input[name=\"name\"]').type('Varsha Rani');\ncy.get('input[name=\"age\"]').type('34');\ncy.get('input[name=\"email\"]').type('varsha.rani@gmail.com');\ncy.get('input[name=\"reason\"]').type('I like shoes and Sneakers');\n// Click the submit button\ncy.get('button[type=\"button\"]').click();\ncy.wait(800);\n// Validate the message displayed after submission\ncy.get('.snippet__Body-sc-12bo3rm-0').eq(1).contains('Submission Confirmed, Varsha Rani').should('be.visible');\ncy.get('.snippet__Body-sc-12bo3rm-0').eq(2).contains('The winner of the raffle will be managed independently and will be contacted via email.').should('be.visible');\ncy.get('.snippet__Body-sc-12bo3rm-0').eq(2).find('strong').invoke('text').then(strongText => {\n  cy.get('.snippet__Body-sc-12bo3rm-0').eq(2).should('contain.text', `The winner of the raffle will be managed independently and will be contacted via email. You have registed 1 submissions.\\n`);\n});\n// Validating post Reload the page is empty \ncy.reload();\ncy.wait(1000);\n// Validate that the form fields are empty\ncy.get('input[name=\"name\"]').should('have.value', '');\ncy.get('input[name=\"age\"]').should('have.value', '');\ncy.get('input[name=\"email\"]').should('have.value', '');\ncy.get('input[name=\"reason\"]').should('have.value', '');\n// Validate that the submit button is still present\ncy.get('button[type=\"button\"]').should('exist');",
+              "err": {},
+              "uuid": "ac609854-4a30-47cd-920e-4ab2b996f2e4",
+              "parentUUID": "6269eee2-c3c8-426f-828a-8e5b28cb754a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ac609854-4a30-47cd-920e-4ab2b996f2e4"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7117,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "9778bd49-99da-41e9-93d4-bb6c77028b20",
+          "title": "Given: User enters invalid age into the \"age\" field",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Then: Should display an error message for age: \" \"",
+              "fullTitle": "Given: User enters invalid age into the \"age\" field Then: Should display an error message for age: \" \"",
+              "timedOut": null,
+              "duration": 2815,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Fill out the form fields\ncy.get('input[name=\"name\"]').type('Varsha');\ncy.get('input[name=\"email\"]').type('varsha.rani@gmail.com');\ncy.get('input[name=\"reason\"]').type('I Like Shoes');\n// Enter the age value from the array\ncy.get('input[name=\"age\"]').clear().type(`${age}`);\n// Click the submit button\ncy.get('button[type=\"button\"]').click();\n// Validate that the error message is displayed\ncy.get('.snippet__Body-sc-12bo3rm-0').should('contain.text', 'Must be 18 or older to enter.');",
+              "err": {},
+              "uuid": "0252c0ca-a5b8-47bb-bffa-294a23bcd082",
+              "parentUUID": "9778bd49-99da-41e9-93d4-bb6c77028b20",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Then: Should display an error message for age: \"12\"",
+              "fullTitle": "Given: User enters invalid age into the \"age\" field Then: Should display an error message for age: \"12\"",
+              "timedOut": null,
+              "duration": 3404,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Fill out the form fields\ncy.get('input[name=\"name\"]').type('Varsha');\ncy.get('input[name=\"email\"]').type('varsha.rani@gmail.com');\ncy.get('input[name=\"reason\"]').type('I Like Shoes');\n// Enter the age value from the array\ncy.get('input[name=\"age\"]').clear().type(`${age}`);\n// Click the submit button\ncy.get('button[type=\"button\"]').click();\n// Validate that the error message is displayed\ncy.get('.snippet__Body-sc-12bo3rm-0').should('contain.text', 'Must be 18 or older to enter.');",
+              "err": {},
+              "uuid": "4ee2f7d6-f770-44e1-b9c2-48d81b2030f8",
+              "parentUUID": "9778bd49-99da-41e9-93d4-bb6c77028b20",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Then: Should display an error message for age: \"sdf\"",
+              "fullTitle": "Given: User enters invalid age into the \"age\" field Then: Should display an error message for age: \"sdf\"",
+              "timedOut": null,
+              "duration": 3727,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Fill out the form fields\ncy.get('input[name=\"name\"]').type('Varsha');\ncy.get('input[name=\"email\"]').type('varsha.rani@gmail.com');\ncy.get('input[name=\"reason\"]').type('I Like Shoes');\n// Enter the age value from the array\ncy.get('input[name=\"age\"]').clear().type(`${age}`);\n// Click the submit button\ncy.get('button[type=\"button\"]').click();\n// Validate that the error message is displayed\ncy.get('.snippet__Body-sc-12bo3rm-0').should('contain.text', 'Must be 18 or older to enter.');",
+              "err": {},
+              "uuid": "830b280b-65ee-44e0-8b24-a6fbf30f49b6",
+              "parentUUID": "9778bd49-99da-41e9-93d4-bb6c77028b20",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Then: Should display an error message for age: \"%^&\"",
+              "fullTitle": "Given: User enters invalid age into the \"age\" field Then: Should display an error message for age: \"%^&\"",
+              "timedOut": null,
+              "duration": 3031,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Fill out the form fields\ncy.get('input[name=\"name\"]').type('Varsha');\ncy.get('input[name=\"email\"]').type('varsha.rani@gmail.com');\ncy.get('input[name=\"reason\"]').type('I Like Shoes');\n// Enter the age value from the array\ncy.get('input[name=\"age\"]').clear().type(`${age}`);\n// Click the submit button\ncy.get('button[type=\"button\"]').click();\n// Validate that the error message is displayed\ncy.get('.snippet__Body-sc-12bo3rm-0').should('contain.text', 'Must be 18 or older to enter.');",
+              "err": {},
+              "uuid": "ddd45bf3-29dd-42d5-9b64-0b07d6a84bf9",
+              "parentUUID": "9778bd49-99da-41e9-93d4-bb6c77028b20",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0252c0ca-a5b8-47bb-bffa-294a23bcd082",
+            "4ee2f7d6-f770-44e1-b9c2-48d81b2030f8",
+            "830b280b-65ee-44e0-8b24-a6fbf30f49b6",
+            "ddd45bf3-29dd-42d5-9b64-0b07d6a84bf9"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 12977,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "aa0c5c42-46be-4eb5-8814-e99bc53df5ef",
+          "title": "Given: If user fills the Reason filed or leave it blank ",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Then: Should confirm submission for reason field: \" \"",
+              "fullTitle": "Given: If user fills the Reason filed or leave it blank  Then: Should confirm submission for reason field: \" \"",
+              "timedOut": null,
+              "duration": 3930,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Fill out the form fields\ncy.get('input[name=\"name\"]').type('Varsha Rani');\ncy.get('input[name=\"age\"]').type('24');\ncy.get('input[name=\"email\"]').type('varsha.rani@gmail.com');\n// Enter the reason value from the array\ncy.get('input[name=\"reason\"]').clear().type(`${reason}`);\n// Click the submit button\ncy.get('button[type=\"button\"]').click();\ncy.wait(1000);\n// Validate the submission confirmation message\ncy.get('.snippet__Body-sc-12bo3rm-0').eq(1).should('contain.text', 'Submission Confirmed');",
+              "err": {},
+              "uuid": "e98b6a76-46a9-40ad-8d0f-2d7ebf9dc037",
+              "parentUUID": "aa0c5c42-46be-4eb5-8814-e99bc53df5ef",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Then: Should confirm submission for reason field: \"sneakers yay!!\"",
+              "fullTitle": "Given: If user fills the Reason filed or leave it blank  Then: Should confirm submission for reason field: \"sneakers yay!!\"",
+              "timedOut": null,
+              "duration": 4934,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Fill out the form fields\ncy.get('input[name=\"name\"]').type('Varsha Rani');\ncy.get('input[name=\"age\"]').type('24');\ncy.get('input[name=\"email\"]').type('varsha.rani@gmail.com');\n// Enter the reason value from the array\ncy.get('input[name=\"reason\"]').clear().type(`${reason}`);\n// Click the submit button\ncy.get('button[type=\"button\"]').click();\ncy.wait(1000);\n// Validate the submission confirmation message\ncy.get('.snippet__Body-sc-12bo3rm-0').eq(1).should('contain.text', 'Submission Confirmed');",
+              "err": {},
+              "uuid": "bd189ff6-6679-4323-9cb4-84a0c36ca40b",
+              "parentUUID": "aa0c5c42-46be-4eb5-8814-e99bc53df5ef",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e98b6a76-46a9-40ad-8d0f-2d7ebf9dc037",
+            "bd189ff6-6679-4323-9cb4-84a0c36ca40b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8864,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\mochawesome-report\\.jsons",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
